@@ -1,5 +1,7 @@
 package com.example.ridecoyote
 
+import android.location.Location
+
 class MapsPresenter(private var mapsContract: MapsContract) {
 
     fun onMapReady() {
@@ -12,5 +14,9 @@ class MapsPresenter(private var mapsContract: MapsContract) {
         } else {
             mapsContract.requestPermission()
         }
+    }
+
+    fun setLatLng(location: Location){
+        mapsContract.scrollMapTo(location.latitude, location.longitude)
     }
 }

@@ -5,4 +5,5 @@ interface MapsContract {
     fun requestPermission()
     fun generateMap()
     fun findLastLocation()
+    fun scrollMapTo(latitude: Double, longitude: Double)
 }
